@@ -57,10 +57,15 @@ describe Dessert do
   end
 
   describe "#serve" do
-    it "contains the titleized version of the chef's name"
+    it "contains the titleized version of the chef's name" do
+      expect (dessert.serve).to include(chef.titleize)
+    end
   end
 
   describe "#make_more" do
-    it "calls bake on the dessert's chef with the dessert passed in"
+    it "calls bake on the dessert's chef with the dessert passed in" do
+      dessert.make_more
+      expect (dessert.chef).to recieve(:bake)
+    end
   end
 end
