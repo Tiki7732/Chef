@@ -9,9 +9,15 @@ describe Dessert do
   let(:chef) { double("chef") }
 
   describe "#initialize" do
-    it "sets a type"
+    subject(:dessert) {Dessert.new("cookies", 12, "chef")}
+      it "sets a type" do
+        expect(dessert.type).to eq("cookies")
+      end
+      
 
-    it "sets a quantity"
+    it "sets a quantity" do
+      expect(dessert.quantity).to eq(12)
+    end
 
     it "starts ingredients as an empty array"
 
